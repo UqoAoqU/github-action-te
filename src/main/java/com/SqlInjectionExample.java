@@ -44,44 +44,44 @@ public class SqlInjectionExample {
         }
     }
     
-   public void doLogin(String user, String pass) {
-       Connection conn = null;
-       PreparedStatement pstmt = null;
-       ResultSet rs = null;
-       try {
-           conn = DriverManager.getConnection("jdbc:mysql://localhost/test?" + "user=myuser&password=mypass");
+//    public void doLogin(String user, String pass) {
+//        Connection conn = null;
+//        PreparedStatement pstmt = null;
+//        ResultSet rs = null;
+//        try {
+//            conn = DriverManager.getConnection("jdbc:mysql://localhost/test?" + "user=myuser&password=mypass");
 
-           // Safe SQL query using prepared statements.
-           String query = "SELECT * FROM users WHERE user = ? AND password = ?";
+//            // Safe SQL query using prepared statements.
+//            String query = "SELECT * FROM users WHERE user = ? AND password = ?";
 
-           pstmt = conn.prepareStatement(query);
-           pstmt.setString(1, user);
-           pstmt.setString(2, pass);
+//            pstmt = conn.prepareStatement(query);
+//            pstmt.setString(1, user);
+//            pstmt.setString(2, pass);
 
-           rs = pstmt.executeQuery();
+//            rs = pstmt.executeQuery();
 
-           // ...
+//            // ...
 
-       } catch (SQLException se) {
-           // Handle errors for JDBC
-           se.printStackTrace();
-       } finally {
-           // Finally block used to close resources
-           try {
-               if (rs != null) {
-                   rs.close();
-               }
-               if (pstmt != null) {
-                   pstmt.close();
-               }
-               if (conn != null) {
-                   conn.close();
-               }
-           } catch (SQLException se) {
-               se.printStackTrace();
-           }
-       }
-   }
+//        } catch (SQLException se) {
+//            // Handle errors for JDBC
+//            se.printStackTrace();
+//        } finally {
+//            // Finally block used to close resources
+//            try {
+//                if (rs != null) {
+//                    rs.close();
+//                }
+//                if (pstmt != null) {
+//                    pstmt.close();
+//                }
+//                if (conn != null) {
+//                    conn.close();
+//                }
+//            } catch (SQLException se) {
+//                se.printStackTrace();
+//            }
+//        }
+//    }
     
     // 额外的 SQL 注入示例,用于测试安全扫描工具
     

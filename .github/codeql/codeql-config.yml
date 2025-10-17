@@ -1,0 +1,6 @@
+name: "CodeQL Configuration"
+
+queries:
+  - uses: ./.github/codeql/queries/ # 引用放置在项目 queries 目录下的所有查询
+  - uses: security-extended # CodeQL 官方提供的扩展的安全查询集
+  - uses: security-and-quality # CodeQL 官方提供的安全和质量查询集

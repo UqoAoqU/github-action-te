@@ -1,0 +1,6 @@
+name: abc
+version: 0.0.1
+library: false
+libraryPathDependencies: codeql-java
+queries:
+  - ./pwd.ql
